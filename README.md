@@ -14,7 +14,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
 
-A self-hosted web app for watching anime through your browser. Search,
+A self-hosted open-source web app for watching anime through your browser. Search,
 browse episode lists, and stream — no client-side software required
 beyond a modern browser.
 
