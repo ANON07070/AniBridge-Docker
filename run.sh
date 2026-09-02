@@ -37,9 +37,9 @@ fi
 echo "==> Compilando o Go Bridge..."
 cd "$BRIDGE_DIR"
 go mod tidy
-go build -o goanime-bridge .
+go build -o anibridge .
 
-export BRIDGE_PATH="$BRIDGE_DIR/goanime-bridge"
+export BRIDGE_PATH="$BRIDGE_DIR/anibridge"
 echo "    Bridge compilado em: $BRIDGE_PATH"
 
 # --- Ambiente Python ---
