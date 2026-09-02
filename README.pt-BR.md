@@ -85,10 +85,10 @@ máquina tiver pouca RAM, prefira a imagem pronta acima.
 
 ```powershell
 cd bridge
-go build -o goanime-bridge.exe .
+go build -o anibridge.exe .
 
 cd ..\backend
-$env:BRIDGE_PATH = "CAMINHO_COMPLETO_PARA\bridge\goanime-bridge.exe"
+$env:BRIDGE_PATH = "CAMINHO_COMPLETO_PARA\bridge\anibridge.exe"
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
