@@ -65,12 +65,10 @@ importa se sua máquina tem pouca RAM — nada é compilado localmente
 de RAM):
 
 ```bash
-docker pull ghcr.io/SEU_USUARIO/anibridge:latest
-docker run -p 8000:8000 ghcr.io/SEU_USUARIO/anibridge:latest
+docker pull ghcr.io/ANON07070/anibridge:latest
+docker run -p 8000:8000 ghcr.io/ANON07070/anibridge:latest
 ```
 
-(troque `SEU_USUARIO` pelo usuário/organização do GitHub onde o
-projeto foi publicado)
 
 ### Docker — buildar localmente
 
