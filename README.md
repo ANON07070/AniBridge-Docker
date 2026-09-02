@@ -65,8 +65,8 @@ matter how weak your machine is — nothing is compiled locally
 failures on machines with ~4GB of RAM):
 
 ```bash
-docker pull ghcr.io/ANON07070/anibridge:latest
-docker run -p 8000:8000 ghcr.io/ANON07070/anibridge:latest
+docker pull ghcr.io/anon07070/anibridge-docker:latest
+docker run -p 8000:8000 ghcr.io/anon07070/anibridge-docker:latest
 ```
 
 
