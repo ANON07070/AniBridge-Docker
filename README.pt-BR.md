@@ -66,7 +66,7 @@ de RAM):
 
 ```bash
 docker pull ghcr.io/anon07070/anibridge-docker:latest
-docker run -p 8000:8000 ghcr.io/ANON07070/anibridge:latest
+docker run -p 8000:8000 ghcr.io/anon07070/anibridge-docker:latest
 ```
 
 
