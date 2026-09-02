@@ -85,10 +85,10 @@ machine has limited RAM, prefer the prebuilt image above.
 
 ```powershell
 cd bridge
-go build -o goanime-bridge.exe .
+go build -o anibridge.exe .
 
 cd ..\backend
-$env:BRIDGE_PATH = "FULL_PATH_TO\bridge\goanime-bridge.exe"
+$env:BRIDGE_PATH = "FULL_PATH_TO\bridge\anibridge.exe"
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
