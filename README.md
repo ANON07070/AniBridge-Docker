@@ -65,12 +65,10 @@ matter how weak your machine is — nothing is compiled locally
 failures on machines with ~4GB of RAM):
 
 ```bash
-docker pull ghcr.io/YOUR_USERNAME/anibridge:latest
-docker run -p 8000:8000 ghcr.io/YOUR_USERNAME/anibridge:latest
+docker pull ghcr.io/ANON07070/anibridge:latest
+docker run -p 8000:8000 ghcr.io/ANON07070/anibridge:latest
 ```
 
-(replace `YOUR_USERNAME` with the GitHub user/org this was published
-under)
 
 ### Docker — build locally
 
