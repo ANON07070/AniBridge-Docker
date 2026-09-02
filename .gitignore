@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# ambiente virtual
+.venv/
+venv/
+env/
+
+#variantes de ambiente
+.env
+.env.*
+
+# GO
+*.exe
+*.out
+
+
+#logs
+*.log
+
+#banco de dados local
+*.sqlite3
+*.db
+*.sqlite

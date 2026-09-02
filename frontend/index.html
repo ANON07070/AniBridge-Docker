@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AniBridge</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>AniBridge</h1>
+  </header>
+
+  <main>
+    <section id="search-view">
+      <form id="search-form">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar anime..."
+          required
+          autofocus
+        />
+        <button type="submit">Buscar</button>
+      </form>
+
+      <p id="status"></p>
+
+      <div id="results"></div>
+    </section>
+
+    <section id="episodes-view" hidden>
+      <button id="back-button" type="button">&larr; Voltar para a busca</button>
+      <h2 id="episodes-title"></h2>
+      <p id="episodes-status"></p>
+
+      <div id="player-container" hidden>
+        <button id="player-close" type="button">Fechar player</button>
+        <video id="video-player" controls></video>
+        <iframe id="video-iframe" allowfullscreen hidden></iframe>
+      </div>
+
+      <ul id="episodes-list"></ul>
+    </section>
+  </main>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

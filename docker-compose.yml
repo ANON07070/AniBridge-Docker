@@ -1,0 +1,7 @@
+services:
+  anibridge:
+    build: .
+    container_name: anibridge
+    ports:
+      - "8000:8000"
+    restart: unless-stopped

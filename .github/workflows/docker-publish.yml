@@ -1,0 +1,63 @@
+name: Build and Publish Docker Image
+
+# Builda a imagem inteira (incluindo a compilação do Go Bridge) nos
+# servidores do GitHub, não na máquina de quem for rodar o projeto.
+# Isso existe especificamente porque compilar o bridge localmente já
+# travou builds em máquinas com pouca RAM (~4GB) — nos runners do
+# GitHub isso não é um problema.
+#
+# Resultado: qualquer pessoa pode rodar o projeto com
+#   docker pull ghcr.io/<usuario>/<repo>:latest
+#   docker run -p 8000:8000 ghcr.io/<usuario>/<repo>:latest
+# sem compilar nada, independente do hardware dela.
+
+on:
+  push:
+    branches: ["main"]
+    tags: ["v*.*.*"]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v4
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags)
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=semver,pattern={{version}}
+            type=sha
+
+      - name: Build and push
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

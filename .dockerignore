@@ -1,0 +1,35 @@
+# Git
+.git/
+.gitignore
+
+# Documentação (não precisa estar dentro da imagem)
+*.md
+STATUS_ATUAL.md
+README.md
+
+# Binários e artefatos de build já compilados localmente
+bridge/goanime-bridge
+bridge/goanime-bridge.exe
+bridge/goanime-bridge-linux
+bridge/go.sum
+
+# Python
+**/__pycache__/
+**/*.pyc
+backend/.venv/
+backend/venv/
+backend/.env
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# IDE / SO
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Scripts que não fazem sentido dentro do container
+run.sh
